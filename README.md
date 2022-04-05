@@ -117,7 +117,7 @@ cd git-workshop
 
 git config pull.rebase false
 
-git remote add upstream git@github.com:<github username>/git-workshop.git
+git remote add upstream git@github.com:parallelworks/git-workshop.git
 
 git pull upstream main 
 
