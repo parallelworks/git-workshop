@@ -20,8 +20,8 @@ address that is used in commit messages. An example git config file looks like t
 ```
 # This is Git's per-user configuration file.
 [user]
-	name = Matt Long
-	email = mlong@parallelworks.com
+	name = Your Name
+	email = your-email@parallelworks.com
 ```
 
 While you can create the `.gitconfig` with any text editor, it is recommended to use git commands to
@@ -86,6 +86,11 @@ you can test ssh with the following command:
 ssh -T git@github.com
 ```
 
+If the connection is successful, you should get a response back that looks like this:
+```
+Hi mattlongt! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
 ## Forking and cloning repos
 Now that ssh to github has been setup, we can clone a repo and begin making contributions. 
 
@@ -125,7 +130,7 @@ git remote set-url --add upstream git@github.com:<github username>/git-workshop.
 git remote set-url --delete upstream git@github.com:parallelworks/git-workshop.git
 ```
 
-5. Rename the `master` branch to `main`
+5. Rename the `master` branch to `main`  
 The documentation provided here will explain the reasoning behind renaming the `master` branch,
 and how to do it.
 
@@ -210,7 +215,7 @@ git checkout add_svc
 git pull
 ```
 
-Copy the `svc.yaml` file from the resources directory to the top level of the repo
+Copy the `svc.yaml` file from the `resources` directory to the top level of the repo
 
 ```
 cp resources/svc.yaml ./ 
