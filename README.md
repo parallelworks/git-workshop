@@ -98,19 +98,13 @@ the repository. This will provide you with a lab to practice git operations.
   - Don't initialize the repo (leave all init boxes unchecked)
   - Name your repo `git-workshop`
 
-2. Rename the `master` branch to `main`
-The documentation provided here will explain the reasoning behind renaming the `master` branch,
-and how to do it.
-
-https://github.com/github/renaming
-
-3. Clone your new repo 
+2. Clone your new repo 
 
 ```
 git clone git@github.com:<github username>/git-workshop.git
 ```
 
-4. Add the original repo as an upstream remote, and push
+3. Add the original repo as an upstream remote, and push
 
 ```
 cd git-workshop
@@ -121,14 +115,28 @@ git remote add upstream git@github.com:parallelworks/git-workshop.git
 
 git pull upstream main 
 
-git push origin main # empty github repos use `master` as the default branch if you didn't rename it already.
+git push origin master # empty github repos use `master` as the default branch if you didn't rename it already.
 ```
 
-5. Reset your new repo as the upstream
+4. Reset your new repo as the upstream
 
 ```
 git remote set-url --add upstream git@github.com:<github username>/git-workshop.git
 git remote set-url --delete upstream git@github.com:parallelworks/git-workshop.git
+```
+
+5. Rename the `master` branch to `main`
+The documentation provided here will explain the reasoning behind renaming the `master` branch,
+and how to do it.
+
+https://github.com/github/renaming
+
+```
+# after renaming the `master` branch to `main`...
+git branch -m master main
+git fetch origin
+git branch -u origin/main main
+git remote set-head origin -a
 ```
 
 ## Creating new branches
@@ -198,6 +206,8 @@ Switch to the second development branch you created
 
 ```
 git checkout add_svc
+
+git pull
 ```
 
 Copy the `svc.yaml` file from the resources directory to the top level of the repo
